@@ -23,7 +23,7 @@ $(".message").keydown(function (j) {
 
 //CREATA FUNZIONE ESTERNA PER INVIARE I MESSAGGI
 function send(){
-   //ci salviamo il valore dell'input inserito dall'utente
+   //salviamo il valore dell'input inserito dall'utente
    var messaggio = $(".message").val();
    
    var elementmsg = $("#template .msgsent").clone();
