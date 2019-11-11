@@ -1,54 +1,46 @@
 $(document).ready(function () {
 
-   //stampo in pagina i div dei contatti con un ciclo for
+   //CICLO FOR USATO PER STAMPARE IN PAGINA I MIEI CONTATTI
    for (var i = 0; i < 15; i++) {
       var myContact = $("#template .my_list-item.debug").clone()
       $(".my_list-global").append(myContact);
 
    }
-   //agganciamo al click sul bottone la funzione di callbnack
    
+//SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
+$(".fas").click(send)
+
+//FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE O = AD 1
+$(".message").keydown(function (j) {
+   console.log(j.keyCode)
+   var messaggio = $(".message").val()
+   if (j.keyCode == "13" && messaggio.length >= 1) {
+      send();
+   }
+
+})  
 
 
+//CREATA FUNZIONE ESTERNA PER INVIARE I MESSAGGI
+function send(){
+   //ci salviamo il valore dell'input inserito dall'utente
+   var messaggio = $(".message").val();
+   
+   var elementmsg = $("#template .msgsent").clone();
 
-   $(".fas").click(send)
+   console.log(elementmsg);
 
-   $(".message").keydown(function (j) {
-      console.log(j.keyCode)
-      if (j.keyCode == "13") {
-         send();
-      }
+   elementmsg.find(".testo").text(messaggio);
 
-   })  
+   //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
+   if (messaggio.length >= 1){
+      $(".my_chat").append(elementmsg);
 
-
-      //salvata la mia funzione per inviare i messaggi come esterna in modo da poter dare al tasto invio lo stesso valore
-      function send(){
-         //ci salviamo il valore dell'input inserito dall'utente
-         var messaggio = $(".message").val();
-         // console.log(messaggio);
-
-         // $("#container").append(
-         //         "<div class='msgsent'>" + messaggio +"</div>"
-         // );
-
-         // cloniamo (facciamo una copia) del div con classe "msgsent" che sta dentro
-         // un div con ID "template"
-         var elementmsg = $("#template .msgsent").clone();
-
-         console.log(elementmsg);
-
-         // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
-         elementmsg.find(".testo").text(messaggio);
-
-         // appendiamo una copia con testo valorizzato del div "msgsent"
-         $(".my_chat").append(elementmsg);
-
-         // ripuliamo il contenuto dell'input, per UX
-         $(".message").val("");
-
-
-      }
+      //Ripulisco l'input ad ogni invio
+      $(".message").val("");
+   }
+   
+}
       
      
 
