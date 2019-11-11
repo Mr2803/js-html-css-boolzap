@@ -35,6 +35,10 @@
  
 }
 
+.search{
+   height: 50px;
+}
+
 .my_chat{
    height:600px;
    overflow-y: scroll;
@@ -49,11 +53,17 @@
 
 .invio input{
    width: 80%;
+   border-radius:10px;
 }
 
 .msgsent {
-  background-color: #DCF8C6;
   padding: 5px;
+}
+
+.msgsent p{
+ background-color:#DCF8C6;
+ padding:10px;
+ border-radius: 10px;
 }
 
 /* Parte di templating */

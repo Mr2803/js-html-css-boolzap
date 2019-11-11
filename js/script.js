@@ -1,6 +1,16 @@
 $(document).ready(function () {
 
+   //stampo in pagina i div dei contatti con un ciclo for
+   for (var i = 0; i < 15; i++) {
+
+      $(".my_list-global").append("<div class=\"my_list-item debug\"></div>");
+
+   }
    //agganciamo al click sul bottone la funzione di callbnack
+   
+
+
+
    $(".fas").click(function () {
 
       //ci salviamo il valore dell'input inserito dall'utente
