@@ -2,8 +2,8 @@ $(document).ready(function () {
 
    //stampo in pagina i div dei contatti con un ciclo for
    for (var i = 0; i < 15; i++) {
-
-      $(".my_list-global").append("<div class=\"my_list-item debug\"></div>");
+      var myContact = $("#template .my_list-item.debug").clone()
+      $(".my_list-global").append(myContact);
 
    }
    //agganciamo al click sul bottone la funzione di callbnack
