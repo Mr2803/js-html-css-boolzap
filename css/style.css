@@ -1,7 +1,14 @@
+/* Regole generali */
 *{
    padding:0;
    margin:0;
    box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient( #009688 0%, #009688 15%, #D8DBD7 15%, #D8DBD7 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .noPadding-margin{
@@ -14,36 +21,67 @@
    min-height:50px;
 }
 
+/* Sezione colonne superiori */
 .my_col-bg{
    background-color:#EEEEEE
 }
 
+/* Sezione profilo personale */
 .profile img{
    border-radius:100%;
-   width:15%;
+   width:40px;
 }
 
+.icons img{
+ width: 100%;
+ vertical-align: middle;
+margin-right: 10px;
+}
+/*Fine Sezione profilo personale */
+
+ /* Sezione Contatti */
 .my_list-global{
-   height:600px;
+   height:700px;
    overflow-y: scroll;
 }
 
-.my_bg-chat{
-   background-image :url(../img/sfondochat.png);
-   background: repeat;
-   background-color:#e5ddd5;
- 
+.my_list-item{
+   background:white;
 }
 
 .search{
    height: 50px;
 }
+ /* Fine Sezione Contatti */
 
-.my_chat{
-   height:600px;
-   overflow-y: scroll;
+ /* Sezione info contatto */
+ .info-contatto img{
+   width: 40px;
+ }
+
+ .options img{
+    margin-right: 20px;
+    width:100%;
+ }
+
+ .name_access span:last-child{
+    font-size: 12px;
+ }
+
+/* Sezione Chat */
+.my_bg-chat{
+   background:url(../img/sfondochat.png), #e5ddd5;
+   background-size:50% ;
+ 
 }
 
+.my_chat{
+   height:700px;
+   overflow-y: scroll;
+}
+/* Fine Sezione Chat */
+
+/* Sezione invio messaggi */
 .invio{
    height:50px;
    z-index: 5;
