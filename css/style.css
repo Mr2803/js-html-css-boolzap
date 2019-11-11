@@ -43,5 +43,20 @@
    height:50px;
    z-index: 5;
    background:white;
-   overflow-y:hidden !important;
+   background-color:#EEEEEE
+}
+
+.invio input{
+   width: 80%;
+}
+
+.msgsent {
+  background-color: #DCF8C6;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+/* Parte di templating */
+#template {
+  display: none;
 }
