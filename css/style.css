@@ -35,8 +35,7 @@
 }
 
 .my_chat{
-   width: 100%;
-   height:calc( 100% - 50px);
+   height:550px;
    overflow-y: scroll;
 }
 
