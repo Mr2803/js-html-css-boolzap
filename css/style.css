@@ -26,3 +26,23 @@
    height:600px;
    overflow-y: scroll;
 }
+
+.my_bg-chat{
+   background-image :url(../img/sfondochat.png);
+   background: repeat;
+   background-color:#e5ddd5;
+ 
+}
+
+.my_chat{
+   width: 100%;
+   height:calc( 100% - 50px);
+   overflow-y: scroll;
+}
+
+.invio{
+   height:50px;
+   z-index: 5;
+   background:white;
+   overflow-y:hidden !important;
+}
