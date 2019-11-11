@@ -4,13 +4,14 @@
    box-sizing: border-box;
 }
 
-.noPadding{
+.noPadding-margin{
    padding:0 !important;
+   margin:0 !important;
 }
 
 .debug{
    border:1px solid black;
-   min-height:30px;
+   min-height:50px;
 }
 
 .my_col-bg{
@@ -35,7 +36,7 @@
 }
 
 .my_chat{
-   height:550px;
+   height:600px;
    overflow-y: scroll;
 }
 
@@ -53,7 +54,6 @@
 .msgsent {
   background-color: #DCF8C6;
   padding: 5px;
-  margin-top: 10px;
 }
 
 /* Parte di templating */
