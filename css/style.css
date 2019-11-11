@@ -1,0 +1,25 @@
+*{
+   padding:0;
+   margin:0;
+   box-sizing: border-box;
+}
+
+
+.debug{
+   border:1px solid black;
+   min-height:30px;
+}
+
+.my_col-bg{
+   background-color:#EEEEEE
+}
+
+.profile img{
+   border-radius:100%;
+   width:15%;
+}
+
+.my_list-global{
+   height:600px;
+   overflow-y: scroll;
+}
