@@ -51,6 +51,27 @@ margin-right: 10px;
 
 .search{
    height: 50px;
+   background:#F8F8F8;
+    display: flex;
+    align-items: center;
+}
+
+.search span {
+    width: 20%;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: 20px;
+    padding: 0 8px;
+}
+
+.search-input {
+    width: 80%;
+    height: 30px;
+    border: 0;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 20px;
+    font-size: 12px;
 }
  /* Fine Sezione Contatti */
 
@@ -84,15 +105,17 @@ margin-right: 10px;
 /* Sezione invio messaggi */
 .invio{
    height:50px;
-   z-index: 5;
    background:white;
    background-color:#EEEEEE
 }
 
 .invio input{
-   width: 80%;
+   width: 85%;
    border-radius:10px;
+   border:0;
+   padding:5px;
 }
+
 
 .msgsent {
   padding: 5px;
