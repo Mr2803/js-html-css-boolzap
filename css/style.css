@@ -111,11 +111,14 @@ margin-right: 10px;
 
 .invio input{
    width: 85%;
-   border-radius:10px;
+   border-radius:25px;
    border:0;
    padding:5px;
 }
-
+.invio input::placeholder{
+  padding:5px;
+  font-size: 15px;
+}
 
 .msgsent {
   padding: 5px;
