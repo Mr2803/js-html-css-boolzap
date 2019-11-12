@@ -30,14 +30,14 @@ $(document).ready(function () {
    $(".send").click(send)
 
 //FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE O = AD 1
-$(".message").keydown(function (j) {
-   console.log(j.keyCode)
-   var messaggio = $(".message").val()
-   if (j.keyCode == "13" && messaggio.length >= 1) {
-      send();
-   }
+   $(".message").keydown(function (j) {
+      console.log(j.keyCode)
+      var messaggio = $(".message").val()
+      if (j.keyCode == "13" && messaggio.length >= 1) {
+         send();
+      }
 
-})  
+   })  
 
 
 //CREATA FUNZIONE ESTERNA PER INVIARE I MESSAGGI
@@ -53,7 +53,7 @@ function send(){
 
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
-      $(".my_chat").append(elementmsg);
+      $(".my_chat").prepend(elementmsg);
 
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
