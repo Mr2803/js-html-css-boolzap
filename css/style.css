@@ -130,9 +130,18 @@ body{
   padding: 5px;
  width:100%;
 }
+.msgreceived {
+  padding: 5px;
+ width:100%;
+}
 
-.global-mex{
+.global-mex-user{
 background-color:#DCF8C6;
+padding:10px;
+ border-radius: 10px;
+}
+.global-mex-pc{
+background-color:white;
 padding:10px;
  border-radius: 10px;
 }

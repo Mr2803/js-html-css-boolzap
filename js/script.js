@@ -49,20 +49,26 @@ function send(){
    /* salvo il valore dell'input inserito dall'utente */
    var messaggio = $(".message").val();
    
+   
    /* salvo una variabile con l'elemento da clonare */
    var elementmsg = $("#template .msgsent").clone();
-
+   var msgPC = $("#template .msgreceived").clone();
    console.log(elementmsg);
+
+   //creo una variabile per inserire l'ora corrente
    var dt = new Date();
    var time = dt.getHours() + ":" + dt.getMinutes();
+
 
    elementmsg.find(".testo").text(messaggio);
    elementmsg.find(".time").text(time);
 
+   msgPC.find(".testopc").text("risposta automatica");
+   msgPC.find(".time").text(time);
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
       $(".my_chat").prepend(elementmsg);
-
+      $(".my_chat").prepend(msgPC)
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
    }
