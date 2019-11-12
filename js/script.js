@@ -69,7 +69,16 @@ function send(){
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
       $(".my_chat").prepend(elementmsg);
-      $(".my_chat").prepend(msgPC)
+     
+      setTimeout(function () { $(".my_chat").prepend(msgPC) }, 1000)
+      if(messaggio == "genitore1"){
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("genitore2") }, 1000)
+      } else if (messaggio == "1"){
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("2") }, 500)
+      } else if (messaggio == "io sono giorgia") {
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("va bene") }, 500)
+      }
+      
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
    }
