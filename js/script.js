@@ -53,7 +53,7 @@ function send(){
 
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
-      $(".my_chat").append(elementmsg);
+      $(".my_chat").prepend(elementmsg);
 
       //Ripulisco l'input ad ogni invio
       $(".message").val("");

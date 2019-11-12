@@ -9,15 +9,7 @@ body{
    background: linear-gradient( #009688 0%, #009688 15%, #D8DBD7 15%, #D8DBD7 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position:relative;
 }
-
-.global{
-   height: 100%;
-    width: 100%;
-    position: fixed;
-}
-
 .noPadding-margin{
    padding:0 !important;
    margin:0 !important;
@@ -27,6 +19,7 @@ body{
    border:1px solid black;
    min-height:50px;
 }
+
 
 /* Sezione colonne superiori */
 .my_col-bg{
@@ -42,13 +35,13 @@ body{
 .icons img{
  width: 100%;
  vertical-align: middle;
-margin-right: 10px;
+ margin-right: 10px;
 }
 /*Fine Sezione profilo personale */
 
  /* Sezione Contatti */
 .my_list-global{
-   height:70vh;
+   height:calc(75vh - 50px);
    overflow-y: scroll;
 }
 
@@ -104,7 +97,7 @@ margin-right: 10px;
 }
 
 .my_chat{
-   height:70vh;
+   height:calc(75vh - 50px);
    overflow-y: scroll;
 }
 /* Fine Sezione Chat */
