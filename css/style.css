@@ -50,6 +50,7 @@ body{
    border-bottom:1px solid rgba(180, 180, 180, 0.568)
 }
 .my_list-item:last-child{
+   background:white;
    border-bottom:0
 }
 
@@ -97,19 +98,13 @@ body{
 .my_bg-chat{
    background:url(../img/sfondochat.png), #e5ddd5;
    background-size:50% ;
+ 
 }
-.global-chat{
+
+.my_chat{
    height:calc(75vh - 50px);
    overflow-y: scroll;
 }
-
-.chat-bot,
-.my_chat{
-   height:calc(75vh - 50px);
-   width:50%;
-}
-
-
 /* Fine Sezione Chat */
 
 /* Sezione invio messaggi */
@@ -133,14 +128,15 @@ body{
 
 .msgsent {
   padding: 5px;
-  background-color:#DCF8C6;
+ width:100%;
 }
 
-.msgsent span{
- 
- padding:10px;
+.global-mex{
+background-color:#DCF8C6;
+padding:10px;
  border-radius: 10px;
 }
+
 
 /* Parte di templating */
 #template {
