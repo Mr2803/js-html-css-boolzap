@@ -15,10 +15,10 @@ body{
    margin:0 !important;
 }
 
-.debug{
+/* .debug{
    border:1px solid black;
    min-height:50px;
-}
+} */
 
 
 /* Sezione colonne superiori */
@@ -47,6 +47,10 @@ body{
 
 .my_list-item{
    background:white;
+   border-bottom:1px solid rgba(180, 180, 180, 0.568)
+}
+.my_list-item:last-child{
+   border-bottom:0
 }
 
 .search{
@@ -93,13 +97,19 @@ body{
 .my_bg-chat{
    background:url(../img/sfondochat.png), #e5ddd5;
    background-size:50% ;
- 
 }
-
-.my_chat{
+.global-chat{
    height:calc(75vh - 50px);
    overflow-y: scroll;
 }
+
+.chat-bot,
+.my_chat{
+   height:calc(75vh - 50px);
+   width:50%;
+}
+
+
 /* Fine Sezione Chat */
 
 /* Sezione invio messaggi */

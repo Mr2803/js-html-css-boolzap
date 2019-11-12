@@ -20,11 +20,12 @@ Buon coding, e ci si vede domattina per fare un pò di codereview sul milestone#
 $(document).ready(function () {
 
    //CICLO FOR USATO PER STAMPARE IN PAGINA I MIEI CONTATTI
+ 
    for (var i = 0; i < 15; i++) {
       var myContact = $("#template .my_list-item.debug").clone()
       $(".my_list-global").append(myContact);
       myContact.find('span:first-child').text("Utente") 
-      myContact.find('span:nth-child(2)').text("Anteprima Messaggio") 
+      myContact.find('span:nth-child(2)').text("Anteprima Messaggio") ;
 
    }
    
