@@ -14,6 +14,7 @@
    <div class="container mt-5">
       <div class="row">
          <div class="col-3 debug my_col-bg">
+            <!-- Sezione profilo personale -->
             <div class="profile d-flex justify-content-between p-2">
                <img src="img/pp.jpg" alt="">
                <div class="icons d-flex">
@@ -22,9 +23,9 @@
                <img src="img/svg/option.svg" alt="">
                </div>
             </div>
-            
-            
+            <!-- Fine Sezione profilo personale -->
          </div>
+         <!-- Sezione info contatto barra superiore -->
          <div class="col-9 debug d-flex justify-content-between my_col-bg">
             <div class="info-contatto d-flex p-2">
                <img src="img/svg/profileNoPhoto.svg" alt="">
@@ -39,35 +40,47 @@
                <img src="img/svg/option.svg" alt="">
             </div>
          </div>
+         <!-- Fine Sezione info contatto barra superiore -->
+
+         <!-- Sezione globale contatti -->
          <div class="col-3 debug noPadding-margin">
+            <!-- Barra di ricerca -->
             <div class="search">
                <span>
                   <img src="img/svg/lens.svg" alt="">
                </span>
                <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat">
             </div>
+            <!-- Fine Barra di ricerca -->
             
+            <!-- Sezione contatti -->
             <div class="my_list-global">
-               <!-- questo div sarà riempito con jquery e racchiude i miei contatti -->
-              
-               
-
+               <!-- Questo contenitore sarà riempito con jquery e racchiude i miei contatti -->
             </div>
+            <!--Fine Sezione contatti -->
+         </div>
+         <!-- Fine Sezione globale contatti -->
 
-         </div>
-         <div class="col-9 noPadding-margin debug ">
-            <div class="my_chat my_bg-chat debug">
-               
+         <!-- Sezione Globale Chat -->
+         <div class="col-9 noPadding-margin debug">
+            <!-- Sezione chat -->
+            <div class="my_chat my_bg-chat flex-column d-flex justify-content-end align-items-end debug">
             </div>
-           <div class="invio debug d-flex justify-content-around align-items-center">
-             
-                  <img src="img/svg/smile.svg" alt="">
-            <input type="text" class="message" placeholder="Scrivi un messaggio">
-            <img class="send" src="img/svg/send.svg" alt="">
-           </div>
+            <!-- Fine Sezione chat -->
+            <!-- Sezione invio messaggio -->
+            <div class="invio debug d-flex justify-content-around align-items-center">
+              <img src="img/svg/smile.svg" alt="">
+               <input type="text" class="message" placeholder="Scrivi un messaggio">
+               <img class="send" src="img/svg/send.svg" alt="">
+            </div>
+            <!-- Fine Sezione invio messaggio -->
          </div>
+         <!--Fine Sezione Globale Chat -->
       </div>
+      <!-- Chiusura Row Globale -->
    </div>
+   <!-- Chiusura Container globale -->
+   
    <!-- blocco template non visibile in pagina -->
    <div id="template">
       <div class='msgsent d-flex justify-content-end'>
