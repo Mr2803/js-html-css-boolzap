@@ -23,8 +23,11 @@ $(document).ready(function () {
    for (var i = 0; i < 15; i++) {
       var myContact = $("#template .my_list-item.debug").clone()
       $(".my_list-global").append(myContact);
+      myContact.find('span:first-child').text("Utente") 
+      myContact.find('span:nth-child(2)').text("Anteprima Messaggio") 
 
    }
+   
    
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
    $(".send").click(send)
@@ -42,14 +45,18 @@ $(document).ready(function () {
 
 //CREATA FUNZIONE ESTERNA PER INVIARE I MESSAGGI
 function send(){
-   //salviamo il valore dell'input inserito dall'utente
+   /* salvo il valore dell'input inserito dall'utente */
    var messaggio = $(".message").val();
    
+   /* salvo una variabile con l'elemento da clonare */
    var elementmsg = $("#template .msgsent").clone();
 
    console.log(elementmsg);
+   var dt = new Date();
+   var time = dt.getHours() + ":" + dt.getMinutes();
 
    elementmsg.find(".testo").text(messaggio);
+   elementmsg.find(".time").text(time);
 
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){

@@ -123,10 +123,11 @@ body{
 
 .msgsent {
   padding: 5px;
+  background-color:#DCF8C6;
 }
 
-.msgsent p{
- background-color:#DCF8C6;
+.msgsent span{
+ 
  padding:10px;
  border-radius: 10px;
 }
