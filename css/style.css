@@ -6,9 +6,16 @@
 }
 
 body{
-  background: linear-gradient( #009688 0%, #009688 15%, #D8DBD7 15%, #D8DBD7 100%);
+   background: linear-gradient( #009688 0%, #009688 15%, #D8DBD7 15%, #D8DBD7 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    position:relative;
+}
+
+.global{
+   height: 100%;
+    width: 100%;
+    position: fixed;
 }
 
 .noPadding-margin{
@@ -41,7 +48,7 @@ margin-right: 10px;
 
  /* Sezione Contatti */
 .my_list-global{
-   height:700px;
+   height:70vh;
    overflow-y: scroll;
 }
 
@@ -97,7 +104,7 @@ margin-right: 10px;
 }
 
 .my_chat{
-   height:700px;
+   height:70vh;
    overflow-y: scroll;
 }
 /* Fine Sezione Chat */
