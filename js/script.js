@@ -59,10 +59,11 @@ function send(){
    var dt = new Date();
    var time = dt.getHours() + ":" + dt.getMinutes();
 
-
+   /* cerco all'interno della mia variabile la classe testo e stampo all'interno il valore del messaggio inserito dall'utente */
    elementmsg.find(".testo").text(messaggio);
    elementmsg.find(".time").text(time);
 
+   /* stampo un messaggio automatico di risposta ad ogni mex inviato dall'utente */
    msgPC.find(".testopc").text("risposta automatica");
    msgPC.find(".time").text(time);
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
