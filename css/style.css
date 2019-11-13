@@ -49,8 +49,12 @@ body{
    background:white;
    border-bottom:1px solid rgba(180, 180, 180, 0.568)
 }
+
+.my_list-item span:first-child{
+   font-weight: bold;
+}
+
 .my_list-item:last-child{
-   background:white;
    border-bottom:0
 }
 
@@ -140,6 +144,7 @@ body{
 .global-mex-pc{
 padding:10px;
 max-width: 40%;
+border-radius: 10px;
 }
 
 .global-mex-user{
@@ -156,6 +161,7 @@ background-color:white;
 
 .testo{
    max-width: 40%;
+   word-break: break-word;
 }
 
 

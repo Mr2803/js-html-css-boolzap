@@ -21,13 +21,13 @@ $(document).ready(function () {
 
    //CICLO FOR USATO PER STAMPARE IN PAGINA I MIEI CONTATTI
  
-   for (var i = 0; i < 15; i++) {
+/*    for (var i = 0; i < 15; i++) {
       var myContact = $("#template .my_list-item.debug").clone()
       $(".my_list-global").append(myContact);
       myContact.find('span:first-child').text("Utente") 
       myContact.find('span:nth-child(2)').text("Anteprima Messaggio") ;
 
-   }
+   } */
    
    
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
@@ -82,9 +82,9 @@ function send(){
       if (messaggio.includes("ciao")) {
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("ciao") }, 1000)
       } else if (messaggio.includes("come va")) {
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") }, 500)
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") }, 1000)
       } else if (messaggio.includes("ci prendiamo un caffè ?")) {
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") }, 500)
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") }, 1000)
       } 
    /*    if(messaggio == "genitore1"){
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("genitore2") }, 1000)
@@ -99,6 +99,26 @@ function send(){
    }
    
 }
+
+   $(".search-input").keydown(function(){
+
+      //Salvo 2 variabili , una che indica il valore del testo inserito e un'altra che salva il v
+      var txtInserito = $(".search-input").val();
+      console.log(txtInserito)
+      var listaContatti = $(".my_list-item .info-contatto .name_access span:first-child").val();
+      console.log(listaContatti)
+        /*  .info-contatto .name_access span: first - child */
+      
+
+      $(".my_list-item").each(function(){
+         if (listaContatti.includes(txtInserito) ){
+            $(this).show();
+         }else{
+            $(".my_list-item").hide();
+         }
+      })
+    
+   })
       
      
 
