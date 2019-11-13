@@ -104,6 +104,12 @@ function send(){
          setTimeout(function () {
              $(".my_chat").prepend(msgPC); 
             }, 1000)
+      } else if (messaggio.includes("allegria")) {
+
+         answerPc.html("<img src='img/allegria.jpg' alt='' style='width: 250px'>");
+         setTimeout(function () {
+            $(".my_chat").prepend(msgPC);
+         }, 1000)
       } 
       
       //Ripulisco l'input ad ogni invio
@@ -112,6 +118,7 @@ function send(){
    
 }
 
+//FUNZIONE PER FILTRARE NOMI CONTATTI CON LA SEARCHBAR . (Problema con keydown , funziona bene con keyup , con keypress funziona per la ricerca ma crea un bug quando cancelli il nome inserito)
    $(".search-input").keyup(function(){
       
       
@@ -131,7 +138,7 @@ function send(){
          //salvo una variabile padre per selezionare l'intero elemento che voglio nascondere risalendo da quello specifico span (non uso la classe altrimenti me li selezionerebbe tutti e li nasconderebbe tutti)
          var parent = elemento.parents(".my_list-item");
 
-         //pongo la mia condizione e dico che se la mia var nome INDEXOF(mi restituisce la posizione della prima occorrenza del valore che abbiamo specificato)
+         //pongo la mia condizione e dico che se la mia var nome INDEXOF/INCLUDES il testo inserito dall'utente allora il mio parent viene mostrato , altrimenti viene nascosto
          if (nome.includes(txtInserito)) {
             parent.show();
          } else {

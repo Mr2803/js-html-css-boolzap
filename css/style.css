@@ -169,3 +169,7 @@ background-color:white;
 #template {
   display: none;
 }
+
+#template .msgreceived img{
+   width:50%;
+}
