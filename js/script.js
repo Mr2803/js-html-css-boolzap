@@ -78,21 +78,23 @@ function send(){
    if (messaggio.length >= 1){
       $(".my_chat").prepend(elementmsg);
      
-      setTimeout(function () { $(".my_chat").prepend(msgPC) }, 1000)
+      setTimeout(function () { 
+         $(".my_chat").prepend(msgPC) 
+      }, 1000);
+
       if (messaggio.includes("ciao")) {
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("ciao") }, 1000)
+         setTimeout(function () {
+             $(".my_chat").prepend(msgPC).find(".testopc").text("ciao") 
+            }, 1000)
       } else if (messaggio.includes("come va")) {
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") }, 1000)
+         setTimeout(function () {
+             $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") 
+            }, 1000)
       } else if (messaggio.includes("ci prendiamo un caffè ?")) {
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") }, 1000)
+         setTimeout(function () {
+             $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") 
+            }, 1000)
       } 
-   /*    if(messaggio == "genitore1"){
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("genitore2") }, 1000)
-      } else if (messaggio == "1"){
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("2") }, 500)
-      } else if (messaggio == "io sono giorgia") {
-         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("va bene") }, 500)
-      } */
       
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
@@ -101,32 +103,33 @@ function send(){
 }
 
    $(".search-input").keydown(function(){
-
-      //Salvo 2 variabili , una che indica il valore del testo inserito e un'altra che salva il valore del nome (ma non lo fa !)
+      
+      
+      //salvo una variabile che include il valore da me inserito
       var txtInserito = $(".search-input").val().toLowerCase();
       console.log(txtInserito)
 
-      //il problema è qui
-      var nomeListaContatti = $(".my_list-item span:first-child").val().toLowerCase();
-      console.log(nomeListaContatti);
-      //il problema è qui
-      
-      var globalList = $(".my_list-item");
-        /*  .info-contatto .name_access span: first - child */
-      
+      //salvo un'altra variabile che seleziona l'elemento che voglio(in questo caso la ricerca sarà effettuate per nome quindi seleziono il mio span primo figlio)
+      var listaContatti = $(".my_list-item span:first-child");
 
-      $(".my_list-item").each(function(i){
-         console.log(i)
-         if (nomeListaContatti.includes(txtInserito)){
-            $(this).show(globalList[i]);
-            console.log(globalList[i])
-         }else{
-            $(".my_list-item").hide();
+      //apro una funzione each per listare tutti i miei span primi figli(quindi i nomi)
+      listaContatti.each(function() {
+         //salvo variabile elemento che seleziona SOLO quel nome
+         var elemento = $(this);
+         //salvo una variabile nome che trasforma in testo in caratteri minuscoli la mia variabile (non avrei potuto usare val perchè funziona solo con gli input)
+         var nome = elemento.text().toLowerCase();
+         //salvo una variabile parent per selezionare l'intero elemento che voglio nascondere risalendo da quello specifico span (non uso la classe altrimenti me li selezionerebbe tutti e li nasconderebbe tutti)
+         var parent = elemento.parent().parent().parent();
+
+         //pongo la mia condizione e dico che se la mia var nome INDEXOF(mi restituisce la posizione della prima occorrenza del valore che abbiamo specificato)
+         if (nome.indexOf(txtInserito) !== -1) {
+            parent.show();
+         } else {
+            parent.hide();
          }
-      })
+      });
+
     
    })
       
-     
-
-})
+})/* Chiusura getready function */
