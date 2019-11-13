@@ -120,6 +120,7 @@ body{
    border:0;
    padding:5px;
 }
+
 .invio input::placeholder{
   padding:5px;
   font-size: 15px;
@@ -127,27 +128,34 @@ body{
 
 
 .msgsent {
-  padding: 5px;
+ padding: 5px;
  width:100%;
 }
 .msgreceived {
-  padding: 5px;
+ padding: 5px;
  width:100%;
+}
+
+.global-mex-user,
+.global-mex-pc{
+padding:10px;
+max-width: 40%;
 }
 
 .global-mex-user{
 background-color:#DCF8C6;
-padding:10px;
- border-radius: 10px;
 }
+
 .global-mex-pc{
 background-color:white;
-padding:10px;
- border-radius: 10px;
 }
 
 .time{
    color:rgba(189, 179, 179, 0.9);
+}
+
+.testo{
+   max-width: 40%;
 }
 
 

@@ -56,8 +56,8 @@ function send(){
    console.log(elementmsg);
 
    //creo una variabile per inserire l'ora corrente
-   var dt = new Date();
-   var time = dt.getHours() + ":" + dt.getMinutes();
+   var date = new Date();
+   var time = date.getHours() + ":" + date.getMinutes();
 
    /* cerco all'interno della mia variabile la classe testo e stampo all'interno il valore del messaggio inserito dall'utente */
    elementmsg.find(".testo").text(messaggio);
@@ -71,13 +71,20 @@ function send(){
       $(".my_chat").prepend(elementmsg);
      
       setTimeout(function () { $(".my_chat").prepend(msgPC) }, 1000)
-      if(messaggio == "genitore1"){
+      if (messaggio == "ciao") {
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("ciao") }, 1000)
+      } else if (messaggio == "come va") {
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") }, 500)
+      } else if (messaggio == "ci prendiamo un caffè ?") {
+         setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") }, 500)
+      } 
+   /*    if(messaggio == "genitore1"){
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("genitore2") }, 1000)
       } else if (messaggio == "1"){
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("2") }, 500)
       } else if (messaggio == "io sono giorgia") {
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("va bene") }, 500)
-      }
+      } */
       
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
