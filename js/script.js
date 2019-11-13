@@ -102,17 +102,18 @@ function send(){
 
    $(".search-input").keydown(function(){
 
-      //Salvo 2 variabili , una che indica il valore del testo inserito e un'altra che salva il v
+      //Salvo 2 variabili , una che indica il valore del testo inserito e un'altra che salva il valore del nome (ma non lo fa !)
       var txtInserito = $(".search-input").val().toLowerCase();
       console.log(txtInserito)
-      var listaContatti = $(".my_list-item .info-contatto .name_access span:first-child").val().toLowerCase();
-      console.log(listaContatti)
+      var nomeListaContatti = $(".my_list-item span:first-child").val().toLowerCase();
+      console.log(nomeListaContatti)
         /*  .info-contatto .name_access span: first - child */
       
 
-      $(".my_list-item").each(function(){
-         if (listaContatti.includes(txtInserito)){
-            $(this).show();
+      $(".my_list-item").each(function(i){
+         console.log(i)
+         if (nomeListaContatti.includes(txtInserito)){
+            $(this).show(i);
          }else{
             $(".my_list-item").hide();
          }
