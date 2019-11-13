@@ -102,7 +102,7 @@ function send(){
    
 }
 
-   $(".search-input").keydown(function(){
+   $(".search-input").keypress(function(){
       
       
       //salvo una variabile che include il valore da me inserito
