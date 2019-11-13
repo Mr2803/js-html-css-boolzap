@@ -103,15 +103,15 @@ function send(){
    $(".search-input").keydown(function(){
 
       //Salvo 2 variabili , una che indica il valore del testo inserito e un'altra che salva il v
-      var txtInserito = $(".search-input").val();
+      var txtInserito = $(".search-input").val().toLowerCase();
       console.log(txtInserito)
-      var listaContatti = $(".my_list-item .info-contatto .name_access span:first-child").val();
+      var listaContatti = $(".my_list-item .info-contatto .name_access span:first-child").val().toLowerCase();
       console.log(listaContatti)
         /*  .info-contatto .name_access span: first - child */
       
 
       $(".my_list-item").each(function(){
-         if (listaContatti.includes(txtInserito) ){
+         if (listaContatti.includes(txtInserito)){
             $(this).show();
          }else{
             $(".my_list-item").hide();
