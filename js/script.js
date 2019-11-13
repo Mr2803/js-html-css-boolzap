@@ -72,27 +72,37 @@ function send(){
    elementmsg.find(".time").text(time);
 
    /* stampo un messaggio automatico di risposta ad ogni mex inviato dall'utente */
-   msgPC.find(".testopc").text("risposta automatica");
-   msgPC.find(".time").text(time);
+   
+   var answerPc = msgPC.find(".testopc");
+   
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
       $(".my_chat").prepend(elementmsg);
-     
+
+      answerPc.text("risposta automatica");
+      msgPC.find(".time").text(time);
+
       setTimeout(function () { 
          $(".my_chat").prepend(msgPC) 
       }, 1000);
 
       if (messaggio.includes("ciao")) {
+
+         answerPc.text("ciao");
          setTimeout(function () {
-             $(".my_chat").prepend(msgPC).find(".testopc").text("ciao") 
+             $(".my_chat").prepend(msgPC);
             }, 1000)
       } else if (messaggio.includes("come va")) {
+
+         answerPc.text("bene ,grazie a te?");
          setTimeout(function () {
-             $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") 
+             $(".my_chat").prepend(msgPC);
             }, 1000)
-      } else if (messaggio.includes("ci prendiamo un caffè ?")) {
+      } else if (messaggio.includes("Ci prendiamo un caffè ?")) {
+
+         answerPc.text("oggi sono impegnato,magari domani");
          setTimeout(function () {
-             $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") 
+             $(".my_chat").prepend(msgPC); 
             }, 1000)
       } 
       
@@ -102,7 +112,7 @@ function send(){
    
 }
 
-   $(".search-input").keypress(function(){
+   $(".search-input").keyup(function(){
       
       
       //salvo una variabile che include il valore da me inserito
@@ -116,13 +126,13 @@ function send(){
       listaContatti.each(function() {
          //salvo variabile elemento che seleziona SOLO quel nome
          var elemento = $(this);
-         //salvo una variabile nome che trasforma in testo in caratteri minuscoli la mia variabile (non avrei potuto usare val perchè funziona solo con gli input)
+         //salvo una variabile nome che trasforma in testo e con caratteri minuscoli la mia variabile (non avrei potuto usare val perchè funziona solo con gli input)
          var nome = elemento.text().toLowerCase();
-         //salvo una variabile parent per selezionare l'intero elemento che voglio nascondere risalendo da quello specifico span (non uso la classe altrimenti me li selezionerebbe tutti e li nasconderebbe tutti)
-         var parent = elemento.parent().parent().parent();
+         //salvo una variabile padre per selezionare l'intero elemento che voglio nascondere risalendo da quello specifico span (non uso la classe altrimenti me li selezionerebbe tutti e li nasconderebbe tutti)
+         var parent = elemento.parents(".my_list-item");
 
          //pongo la mia condizione e dico che se la mia var nome INDEXOF(mi restituisce la posizione della prima occorrenza del valore che abbiamo specificato)
-         if (nome.indexOf(txtInserito) !== -1) {
+         if (nome.includes(txtInserito)) {
             parent.show();
          } else {
             parent.hide();
