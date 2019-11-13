@@ -105,15 +105,21 @@ function send(){
       //Salvo 2 variabili , una che indica il valore del testo inserito e un'altra che salva il valore del nome (ma non lo fa !)
       var txtInserito = $(".search-input").val().toLowerCase();
       console.log(txtInserito)
+
+      //il problema è qui
       var nomeListaContatti = $(".my_list-item span:first-child").val().toLowerCase();
-      console.log(nomeListaContatti)
+      console.log(nomeListaContatti);
+      //il problema è qui
+      
+      var globalList = $(".my_list-item");
         /*  .info-contatto .name_access span: first - child */
       
 
       $(".my_list-item").each(function(i){
          console.log(i)
          if (nomeListaContatti.includes(txtInserito)){
-            $(this).show(i);
+            $(this).show(globalList[i]);
+            console.log(globalList[i])
          }else{
             $(".my_list-item").hide();
          }
