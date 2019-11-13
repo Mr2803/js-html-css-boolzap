@@ -71,11 +71,11 @@ function send(){
       $(".my_chat").prepend(elementmsg);
      
       setTimeout(function () { $(".my_chat").prepend(msgPC) }, 1000)
-      if (messaggio == "ciao") {
+      if (messaggio.includes("ciao")) {
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("ciao") }, 1000)
-      } else if (messaggio == "come va") {
+      } else if (messaggio.includes("come va")) {
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("bene ,grazie a te?") }, 500)
-      } else if (messaggio == "ci prendiamo un caffè ?") {
+      } else if (messaggio.includes("ci prendiamo un caffè ?")) {
          setTimeout(function () { $(".my_chat").prepend(msgPC).find(".testopc").text("oggi sono impegnato,magari domani") }, 500)
       } 
    /*    if(messaggio == "genitore1"){
