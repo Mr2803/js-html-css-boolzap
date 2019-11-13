@@ -43,6 +43,14 @@ $(document).ready(function () {
 
    })  
 
+/* Creo una funzione per aggiungere lo 0 se i minuti sono minori di 10 */
+
+function addZero(i){
+   if(i<10){
+      i = "0" + i
+   }
+   return i;
+}
 
 //CREATA FUNZIONE ESTERNA PER INVIARE I MESSAGGI
 function send(){
@@ -57,7 +65,7 @@ function send(){
 
    //creo una variabile per inserire l'ora corrente
    var date = new Date();
-   var time = date.getHours() + ":" + date.getMinutes();
+   var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
 
    /* cerco all'interno della mia variabile la classe testo e stampo all'interno il valore del messaggio inserito dall'utente */
    elementmsg.find(".testo").text(messaggio);
