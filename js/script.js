@@ -20,13 +20,34 @@ Buon coding, e ci si vede domattina per fare un pò di codereview sul milestone#
 $(document).ready(function () {
 
    //CICLO FOR USATO PER STAMPARE IN PAGINA I MIEI CONTATTI
- 
-/*    for (var i = 0; i < 15; i++) {
-      var myContact = $("#template .my_list-item.debug").clone()
-      $(".my_list-global").append(myContact);
-      myContact.find('span:first-child').text("Utente") 
-      myContact.find('span:nth-child(2)').text("Anteprima Messaggio") ;
+  /*  var contatti = ["Elena", "Marco", "Simone", "Chiara", "Nikolas", "Federico", "Giampaolo", "Michele", "Leonardo", "Valentina", "Sofia", "Lilian", "Axl",]
 
+   function mix(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+         // Pick a remaining element...
+         randomIndex = Math.floor(Math.random() * currentIndex);
+         currentIndex -= 1;
+
+         // And swap it with the current element.
+         temporaryValue = array[currentIndex];
+         array[currentIndex] = array[randomIndex];
+         array[randomIndex] = temporaryValue;
+      }
+      return array;
+   }
+
+   mix(contatti)
+
+   for (var i = 0; i < contatti.length; i++) {
+      var myContact = $("#template .my_list-item").clone()
+      
+      myContact.find('span:first-child').text(contatti[i]) 
+      myContact.find('span:nth-child(2)').text("Anteprima messaggio") 
+      $(".my_list-global").append(myContact);
    } */
    
    
@@ -97,8 +118,20 @@ function send(){
          answerPc.text("bene ,grazie a te?");
          setTimeout(function () {
              $(".my_chat").prepend(msgPC);
-            }, 1000)
-      } else if (messaggio.includes("Ci prendiamo un caffè ?")) {
+            }, 1000);
+      } else if (messaggio.includes("bene")) {
+
+         answerPc.text("ah, menomale mi fa piacere 😃");
+         setTimeout(function () {
+            $(".my_chat").prepend(msgPC);
+         }, 1000);
+      } else if (messaggio.includes("male")) {
+
+         answerPc.text("ah , mi dispiace molto 😢");
+         setTimeout(function () {
+            $(".my_chat").prepend(msgPC);
+         }, 1000);
+      } else if (messaggio.includes("usciamo") || messaggio.includes("caffè") ) {
 
          answerPc.text("oggi sono impegnato,magari domani");
          setTimeout(function () {
