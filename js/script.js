@@ -201,7 +201,10 @@ function send(){
    //FUNZIONE PER FAR APPARIRE E SCOMPARIRE IL DROPDOWN
    $(".my_chat.my_active").on("click", ".global-mex-user", function (event) {
       var elem = $(this);
-      elem.find(".drop-mex").toggleClass("my_active");
+      elem.find(".drop-mex").addClass("my_active");
+      elem.find(".drop-mex span").click(function(){
+         elem.parents(".msgsent").addClass("displayNone");
+      })
    });
 
       
