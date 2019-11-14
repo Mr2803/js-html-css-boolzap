@@ -174,8 +174,11 @@ function send(){
       $(this).addClass("my_list-bg");
       $(".my_chat[data-ref=" + clicked + "]").addClass("my_active")
 
+      //creo una variabile che ha il valore del nome in cima alla mia chat
       var nomeTop = $(".my_list-bg span:first-child").text();
+      var imgTop = $(".my_list-bg img").attr("src");
       console.log(nomeTop)
+      console.log(imgTop)
       $("#nome_top").text(nomeTop)
    })
 
@@ -186,7 +189,7 @@ function send(){
    //FUNZIONE PER FAR APPARIRE E SCOMPARIRE IL DROPDOWN
 
    //parto da un elemento statico , in questo caso l intera finestra della chat attiva in quel momento e poi mi sposto su .global-mex-user (elemento generato dinamicamente)
-   $(".my_chat.my_active").on("click", ".global-mex-user", function (event) {
+   $(document).on("click", ".global-mex-user", function (event) {
       //creo una variabile per comodità per far riferimento a quell elemento
       var elem = $(this);
       //cerco all'interno di
