@@ -37,13 +37,15 @@ $(document).ready(function () {
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
    $("#send").click(send)
 
-//FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE O = AD 1
+//FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE o = AD 1
    $(".message").keyup(function (j) {
       console.log(j.keyCode)
       var messaggio = $(".message").val()
       if (j.keyCode == "13" && messaggio.length >= 1) {
          send();
+         messaggio = "";
       } 
+      console.log(messaggio,messaggio.length)
       if (messaggio.length > 0) {
          $("#audio").hide();
          $("#send").show();
@@ -51,10 +53,10 @@ $(document).ready(function () {
          $("#audio").show();
          $("#send").hide();
       }
-
+      
    })  
 
-/* Creo una funzione per aggiungere lo 0 se i minuti sono minori di 10 */
+/* FUNZIONE PER INSERIRE LO 0 ALL'INTERNO DELL'ORA SE I MINUTI O LE ORE SONO MINORI DI 10  */
 
 function addZero(i){
    if(i<10){
@@ -137,6 +139,7 @@ function send(){
       
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
+      
    }
    
 }
