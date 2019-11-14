@@ -180,6 +180,7 @@ function send(){
       console.log(nomeTop)
       console.log(imgTop)
       $("#nome_top").text(nomeTop)
+      $("#img_top").attr("src",imgTop)
    })
 
    

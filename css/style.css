@@ -49,6 +49,10 @@ body{
    background:white;
    border-bottom:1px solid rgba(180, 180, 180, 0.568)
 }
+.my_list-item:hover{
+   background:rgba(255, 252, 252, 0.642);
+}
+
 
 .my_list-item span:first-child{
    font-weight: bold;
@@ -59,7 +63,7 @@ body{
 }
 
 .my_list-bg{
-   background: lightgrey;
+   background:lightgrey;
 }
 
 .search{
@@ -92,6 +96,7 @@ body{
  
  .info-contatto img{
    width: 40px;
+   border-radius: 100%;
  }
 
  .options img{
