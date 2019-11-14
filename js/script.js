@@ -98,50 +98,50 @@ function send(){
    
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
-      $(".my_chat").prepend(elementmsg);
+      $(".my_chat.my_active").prepend(elementmsg);
 
       answerPc.text("risposta automatica");
       msgPC.find(".time").text(time);
 
       setTimeout(function () { 
-         $(".my_chat").prepend(msgPC) 
+         $(".my_chat.my_active").prepend(msgPC) 
       }, 1000);
 
       if (messaggio.includes("ciao")) {
 
          answerPc.text("ciao");
          setTimeout(function () {
-             $(".my_chat").prepend(msgPC);
+            $(".my_chat.my_active").prepend(msgPC);
             }, 1000)
       } else if (messaggio.includes("come va")) {
 
          answerPc.text("bene ,grazie a te?");
          setTimeout(function () {
-             $(".my_chat").prepend(msgPC);
+            $(".my_chat.my_active").prepend(msgPC);
             }, 1000);
       } else if (messaggio.includes("bene")) {
 
          answerPc.text("ah, menomale mi fa piacere 😃");
          setTimeout(function () {
-            $(".my_chat").prepend(msgPC);
+            $(".my_chat.my_active").prepend(msgPC);
          }, 1000);
       } else if (messaggio.includes("male")) {
 
          answerPc.text("ah , mi dispiace molto 😢");
          setTimeout(function () {
-            $(".my_chat").prepend(msgPC);
+            $(".my_chat.my_active").prepend(msgPC);
          }, 1000);
       } else if (messaggio.includes("usciamo") || messaggio.includes("caffè") ) {
 
          answerPc.text("oggi sono impegnato,magari domani");
          setTimeout(function () {
-             $(".my_chat").prepend(msgPC); 
+            $(".my_chat.my_active").prepend(msgPC); 
             }, 1000)
       } else if (messaggio.includes("allegria")) {
 
          answerPc.html("<img src='img/allegria.jpg' alt='' style='width: 250px'>");
          setTimeout(function () {
-            $(".my_chat").prepend(msgPC);
+            $(".my_chat.my_active").prepend(msgPC);
          }, 1000)
       } 
       
@@ -180,6 +180,14 @@ function send(){
       });
 
     
+   })
+
+   $(".my_list-item").click(function () {
+      var clicked = $(this).attr("data-ref");
+      $(".my_chat.my_active").removeClass("my_active");
+      $(".my_chat[data-ref=" + clicked + "]").addClass("my_active")
+
+
    })
       
 })/* Chiusura getready function */
