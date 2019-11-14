@@ -33,18 +33,7 @@ $(document).ready(function () {
       $(".my_list-global").append(myContact);
    } */
    
-   $(".message").keyup(function(){
-      var messaggio = $(".message").val()
-         
-      if (messaggio.length > 0 ){
-         $("#audio").hide();
-         $("#send").show();
-      } else{
-         $("#audio").show();
-         $("#send").hide();
-      }
-      
-   })
+   
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
    $("#send").click(send)
 
@@ -54,6 +43,13 @@ $(document).ready(function () {
       var messaggio = $(".message").val()
       if (j.keyCode == "13" && messaggio.length >= 1) {
          send();
+      } 
+      if (messaggio.length > 0) {
+         $("#audio").hide();
+         $("#send").show();
+      } else{
+         $("#audio").show();
+         $("#send").hide();
       }
 
    })  
