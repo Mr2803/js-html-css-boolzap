@@ -201,6 +201,10 @@ background-color:white;
    word-break: break-word;
 }
 
+#send{
+   display:none;
+}
+
 
 /* Parte di templating */
 #template {

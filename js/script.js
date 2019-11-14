@@ -33,12 +33,23 @@ $(document).ready(function () {
       $(".my_list-global").append(myContact);
    } */
    
-   
+   $(".message").keyup(function(){
+      var messaggio = $(".message").val()
+         
+      if (messaggio.length > 0 ){
+         $("#audio").hide();
+         $("#send").show();
+      } else{
+         $("#audio").show();
+         $("#send").hide();
+      }
+      
+   })
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
-   $(".send").click(send)
+   $("#send").click(send)
 
 //FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE O = AD 1
-   $(".message").keydown(function (j) {
+   $(".message").keyup(function (j) {
       console.log(j.keyCode)
       var messaggio = $(".message").val()
       if (j.keyCode == "13" && messaggio.length >= 1) {
