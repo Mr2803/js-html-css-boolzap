@@ -58,6 +58,10 @@ body{
    border-bottom:0
 }
 
+.my_list-bg{
+   background: lightgrey;
+}
+
 .search{
    height: 50px;
    background:#F8F8F8;

@@ -184,7 +184,9 @@ function send(){
 
    $(".my_list-item").click(function () {
       var clicked = $(this).attr("data-ref");
+      $(".my_list-item").removeClass("my_list-bg");
       $(".my_chat.my_active").removeClass("my_active");
+      $(this).addClass("my_list-bg");
       $(".my_chat[data-ref=" + clicked + "]").addClass("my_active")
 
 
