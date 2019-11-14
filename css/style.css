@@ -161,6 +161,15 @@ border-radius: 10px;
 
 .global-mex-user{
 background-color:#DCF8C6;
+position:relative;
+}
+
+.drop-mex{
+  position: absolute;
+    background: lightgray;
+    padding: 5px;
+    top: -120%;
+    display:none;
 }
 
 .global-mex-pc{

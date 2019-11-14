@@ -168,6 +168,7 @@ function send(){
          var elemento = $(this);
          //salvo una variabile nome che trasforma in testo e con caratteri minuscoli la mia variabile (non avrei potuto usare val perchè funziona solo con gli input)
          var nome = elemento.text().toLowerCase();
+         console.log(nome)
          //salvo una variabile padre per selezionare l'intero elemento che voglio nascondere risalendo da quello specifico span (non uso la classe altrimenti me li selezionerebbe tutti e li nasconderebbe tutti)
          var parent = elemento.parents(".my_list-item");
 
@@ -182,6 +183,7 @@ function send(){
     
    })
 
+   /* FUNZIONE PER FAR SI CHE ALLA CHAT CLICCATA SI APRA LA CHAT CORRISPONDENTE CON IL TESTO CORRISPONDENTE E CAMBI IL BG NELLA LISTA CONTATTI IN BASE ALL'ELEMENTO SELEZIONATO */
    $(".my_list-item").click(function () {
       var clicked = $(this).attr("data-ref");
       $(".my_list-item").removeClass("my_list-bg");
@@ -191,5 +193,16 @@ function send(){
 
 
    })
+
+  /*  $(".global-mex-user").click(function(){
+      $(this).find(".drop-mex").addClass("my_active")
+   }) */
+
+   //FUNZIONE PER FAR APPARIRE E SCOMPARIRE IL DROPDOWN
+   $(".my_chat.my_active").on("click", ".global-mex-user", function (event) {
+      var elem = $(this);
+      elem.find(".drop-mex").toggleClass("my_active");
+   });
+
       
 })/* Chiusura getready function */
