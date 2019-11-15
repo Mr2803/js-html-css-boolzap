@@ -176,11 +176,13 @@ background-color:#DCF8C6;
 }
 
 .drop-mex{
-  position: absolute;
-    background: lightgray;
+   position: absolute;
+    background: white;
     padding: 5px;
-    top: -120%;
-    display:none;
+    top: -50%;
+    right: 0;
+    display: none;
+    font-size: 13px;
 }
 
 .displayNone{
