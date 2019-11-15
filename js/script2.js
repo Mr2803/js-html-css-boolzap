@@ -86,7 +86,7 @@ function send(){
 
    /* stampo un messaggio automatico di risposta ad ogni mex inviato dall'utente */
    
-   /* var answerPc = msgPC.find(".testopc"); */
+   
    
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
@@ -178,28 +178,26 @@ function send(){
      var date = new Date();
      var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
      var answerPc = msgPC.find(".testopc");
-
+     var anteprimaMex = $(".testopc").text()
      // mi salvo 2 array con i valori delle risposte chiave 
      var keywordUser = ["ciao", "come va", "bene", "male", "usciamo"];
-     var rispostePc = ["ciao", "bene, grazie a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani"];
-     answerPc.text("risposta automatica");
-
-     // cerco se nel mio messaggio c è una parola chiave 
+     var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani"];
+     //risposta di base del pc quando viene scritta una keywords non definita
+     answerPc.text("mi dispiace , non capisco ancora questa parola");
+     msgPC.find(".time").text(time); 
+     // ciclo il mio array delle parole chiave inserite dall'utente ...
      for (var x = 0; x < keywordUser.length; x++){
-        //se la trova imposta il messaggio corretto in base all'index
+        //...se una parola chiave è stata trovata , allora il pc risponde in maniera adeguata , in base all'index
         if (messaggio.includes(keywordUser[x])) {
            answerPc.text(rispostePc[x]);
-           
-        }  
+         }  
      }
-     
-     
-     //risposta di base del pc quando viene scritta una keywords non definita
-     
-     msgPC.find(".time").text(time);
+     $(".my_list-bg span:last-child").text("sta scrivendo").css("color","#06d755").css("font-weigth","bold")
+     //imposto il tempo di risposta
      setTimeout(function () {
         $(".my_chat.my_active").prepend(msgPC)
-     }, 1000);
+        $(".my_list-bg span:last-child").text("anteprima messaggio")
+     }, 2000);
      
   } 
 
