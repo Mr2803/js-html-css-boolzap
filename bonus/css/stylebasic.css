@@ -1,0 +1,259 @@
+/* Regole generali */
+*{
+   padding:0;
+   margin:0;
+   box-sizing: border-box;
+}
+
+body{
+   background: linear-gradient( #009688 0%, #009688 15%, #D8DBD7 15%, #D8DBD7 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.noPadding-margin{
+   padding:0 !important;
+   margin:0 !important;
+}
+
+
+
+/* Sezione colonne superiori */
+.my_col-bg{
+   background-color:#EEEEEE
+}
+
+.my_col-bg span:last-child{
+   color:rgb(163, 161, 161);
+}
+
+/* Sezione profilo personale */
+.profile img{
+   border-radius:100%;
+   width:40px;
+}
+
+.icons svg{
+ width: 100%;
+ margin-right: 10px;
+}
+.icons svg:last-child{
+ 
+ margin-right: 0;
+}
+/*Fine Sezione profilo personale */
+
+ /* Sezione Contatti */
+.my_list-global{
+   height:calc(75vh - 50px);
+   overflow-y: scroll;
+}
+
+.my_list-item{
+   background:white;
+   border-bottom:1px solid rgba(180, 180, 180, 0.568)
+}
+.my_list-item:hover{
+   background:rgba(255, 252, 252, 0.642);
+}
+
+
+.my_list-item span:last-child{
+  color: rgb(163, 161, 161);
+}
+
+.my_list-item:last-child{
+   border-bottom:0
+}
+
+.my_list-bg{
+   background:lightgrey;
+}
+
+
+.search{
+   height: 50px;
+   background:#F8F8F8;
+    display: flex;
+    align-items: center;
+}
+.search-dark{
+   background:#2B2929;
+    
+}
+
+.search span {
+    width: 20%;
+    height: 30px;
+    background: #fff;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: 20px;
+    padding: 0 8px;
+}
+
+.search-input {
+    width: 80%;
+    height: 30px;
+    border: 0;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 20px;
+    font-size: 12px;
+}
+
+
+ /* Fine Sezione Contatti */
+
+ /* Sezione info contatto */
+ 
+ .info-contatto img,
+ .info-contatto svg{
+   width: 40px;
+   border-radius: 100%;
+ }
+
+ .options svg,
+ .options i{
+    margin-right: 20px;
+    width:100%;
+ }
+
+
+
+ .name_access span:last-child{
+    font-size: 12px;
+ }
+ .name_access-dark{
+    color:white;
+ }
+
+/* Sezione Chat */
+.my_bg-chat{
+   background:url(../img/sfondochat.png), #e5ddd5;
+   background-size:50% ;
+ 
+}
+.my_bg-chat-dark{
+   background:url(../img/sfondochat.png), rgb(53, 48, 48);
+   background-size:50% ;
+ 
+}
+
+.my_chat{
+   height:calc(75vh - 50px);
+   overflow-y: scroll;
+}
+.my_chat{
+   display: none !important;
+}
+.my_active{
+   display:flex !important;
+}
+
+/* Fine Sezione Chat */
+
+/* Sezione invio messaggi */
+.invio{
+   height:50px;
+   background-color:#EEEEEE
+}
+.invio-dark{
+   background-color:#323232;
+}
+
+.invio input{
+   width: 85%;
+   border-radius:25px;
+   border:0;
+   padding:5px;
+}
+
+
+.invio input::placeholder{
+  padding:5px;
+  font-size: 15px;
+}
+
+
+.msgsent {
+ padding: 5px;
+ width:100%;
+}
+.msgreceived {
+ padding: 5px;
+ width:100%;
+}
+
+.global-mex-user,
+.global-mex-pc{
+padding:10px;
+max-width: 40%;
+border-radius: 10px;
+}
+
+.global-mex-user{
+background-color:#DCF8C6;
+
+}
+
+.msgsent{
+   position:relative;
+}
+
+.drop-mex{
+   position: absolute;
+    background: white;
+    padding: 5px;
+    top: -50%;
+    right: 0;
+    display: none;
+    font-size: 13px;
+}
+
+.displayNone{
+   display:none !important;
+}
+
+
+.global-mex-pc{
+background-color:white;
+}
+.global-mex-pc-dark{
+background-color:#2d2d2d!important;
+color:white;
+}
+
+.time{
+   color:rgba(189, 179, 179, 0.9);
+}
+
+.testo{
+   max-width: 40%;
+   word-break: break-word;
+}
+
+
+
+.writing{
+   color:#06d755 !important;
+   font-weight: bold;
+}
+
+#send{
+   display:none;
+}
+
+/* MODALITà NOTTE */
+.moon_white{
+   color:white;
+}
+
+
+/* Parte di templating */
+#template {
+  display: none;
+}
+
+#template .msgreceived img{
+   width:50%;
+}
+

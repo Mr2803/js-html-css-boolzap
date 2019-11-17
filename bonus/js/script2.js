@@ -210,9 +210,12 @@ function send(){
    $(document).on("click", ".fa-moon", function (event) {
       //creo una variabile per comodità per far riferimento a quell elemento
       var elem = $(this);
+      /* var cssbasic = "css/stylebasic.css"
+      var cssdark = "css/styledark.css" */
       //cerco all'interno di
       elem.toggleClass("moon_white")
       if (elem.hasClass("moon_white")){
+         /* $("#my_personal-css").attr("href",cssdark); */
          $("body").addClass("body_dark");
          $(".my_col-bg").addClass("my_col-bg-dark");
          $(".my_bg-chat").addClass("my_bg-chat-dark");
@@ -221,14 +224,14 @@ function send(){
          $(".search").addClass("search-dark");
          $(".search span").addClass("search-dark-det");
          $(".search input").addClass("search-dark-det");
-
          $(".name_access span:first-child").addClass("name_access-dark");
          $(".global-mex-pc").addClass("global-mex-pc-dark");
          $("input.message").addClass("search-dark-det")
          $("path").attr('fill', '#fff');
-         $("#state path:last-child").attr('fill', '#009588');
+         $("#state path:last-child").attr('fill', '#009588'); 
 
       }else{
+         /* $("#my_personal-css").attr("href", cssbasic); */
          $("body").removeClass("body_dark");
          $(".my_col-bg").removeClass("my_col-bg-dark");
          $(".my_bg-chat").removeClass("my_bg-chat-dark");
@@ -242,7 +245,7 @@ function send(){
          $("input.message").removeClass("search-dark-det")
          $("path").attr('fill', '#263238');
          $("#state path:first-child").attr('fill', '#727A7E');
-         $("#state path:last-child").attr('fill', '#009588');
+         $("#state path:last-child").attr('fill', '#009588'); 
          
       }
 
