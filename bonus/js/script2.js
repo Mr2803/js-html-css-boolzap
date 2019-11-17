@@ -253,7 +253,11 @@ $(document).ready(function () {
      setTimeout(function () {
         $(".my_chat.my_active").prepend(msgPC)
         $(".my_list-bg span:last-child").text(answerPc.text()).removeClass("writing");
-        $(".my_col-bg span:last-child").text("online")
+        $(".my_col-bg span:last-child").text("online");
+        setTimeout(function(){
+           $(".my_col-bg span:last-child").text("ultimo accesso " + time)
+
+        },2000);
         
      }, 1500);
    } 
