@@ -35,8 +35,10 @@ $(document).ready(function () {
 
    
 //Richiamo la mia funzione esterna SEND al CLICK della freccia
+   var date = new Date();
+   var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
    $("#send").click(send)
-
+   $(".my_col-bg span:last-child").text("ultimo accesso " + time)
    
 //FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE o = AD 1
    $(".message").keyup(function (j) {
@@ -197,7 +199,6 @@ $(document).ready(function () {
 
          //Ripulisco l'input ad ogni invio
          $(".message").val("");
-
       }
 
    }
@@ -221,11 +222,13 @@ $(document).ready(function () {
      var keywordUser = ["ciao", "come va", "bene", "male", "usciamo","chi sei","sei un bot"];
      var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani","sono " + nomeTop + " non vedi ?","bene , hai scoperto il mio segreto , non posso che autodistruggermi"];
      
+
      setTimeout(function (){
         if (messaggio.includes("sei un bot")) {
-           $(".page-notFound").show()
+           $(".page-notFound").show();
+           
          }
-      },5000); 
+      },4000); 
       /* window.location.replace("http://stackoverflow.com"); */
      //risposta di base del pc quando viene scritta una keywords non definita
      answerPc.text("mi dispiace , non capisco ancora questa parola");
@@ -243,11 +246,15 @@ $(document).ready(function () {
      
 
      //cambio il valore del testo nella mia lista contatti in "sta scrivendo" , che sarà visibile prima dell'arrivo della risposta del pc 
+     
      $(".my_list-bg span:last-child").text("sta scrivendo...").addClass("writing")
+     $(".my_col-bg span:last-child").text("sta scrivendo...")
      //imposto il tempo di risposta
      setTimeout(function () {
         $(".my_chat.my_active").prepend(msgPC)
-        $(".my_list-bg span:last-child").text(answerPc.text()).removeClass("writing")
+        $(".my_list-bg span:last-child").text(answerPc.text()).removeClass("writing");
+        $(".my_col-bg span:last-child").text("online")
+        
      }, 1500);
    } 
 
