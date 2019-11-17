@@ -21,6 +21,9 @@ body{
 .my_col-bg{
    background-color:#EEEEEE
 }
+.my_col-bg-dark{
+   background-color:rgb(36, 33, 33);
+}
 .my_col-bg span:last-child{
    color:rgb(163, 161, 161);
 }
@@ -67,12 +70,19 @@ body{
 .my_list-bg{
    background:lightgrey;
 }
+.my_list-bg-dark{
+   background:rgb(53, 48, 48);
+}
 
 .search{
    height: 50px;
    background:#F8F8F8;
     display: flex;
     align-items: center;
+}
+.search-dark{
+   background:rgb(85, 81, 81);
+    
 }
 
 .search span {
@@ -138,8 +148,10 @@ body{
 /* Sezione invio messaggi */
 .invio{
    height:50px;
-   background:white;
    background-color:#EEEEEE
+}
+.invio-dark{
+   background-color:rgb(36, 33, 33);
 }
 
 .invio input{

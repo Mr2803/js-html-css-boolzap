@@ -213,11 +213,17 @@ function send(){
       //cerco all'interno di
       elem.toggleClass("moon_white")
       if (elem.hasClass("moon_white")){
-         $(".my_col-bg").css("background-color","black")
+         $(".my_col-bg").addClass("my_col-bg-dark")
          $(".my_bg-chat").addClass("my_bg-chat-dark")
+         $(".my_list-item").addClass("my_list-bg-dark")
+         $(".invio").addClass("invio-dark")
+         $(".search").addClass("search-dark")
       }else{
-         $(".my_col-bg").css("background-color", "#eeeeee")
+         $(".my_col-bg").removeClass("my_col-bg-dark")
          $(".my_bg-chat").removeClass("my_bg-chat-dark")
+         $(".my_list-item").removeClass("my_list-bg-dark")
+         $(".invio").removeClass("invio-dark")
+         $(".search").removeClass("search-dark")
       }
       
 
