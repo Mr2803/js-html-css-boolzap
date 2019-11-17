@@ -32,9 +32,9 @@ $(document).ready(function () {
       myContact.find('span:nth-child(2)').text("Anteprima messaggio") 
       $(".my_list-global").append(myContact);
    } */
+
    
-   
-//SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
+//Richiamo la mia funzione esterna SEND al CLICK della freccia
    $("#send").click(send)
 
    
@@ -57,54 +57,9 @@ $(document).ready(function () {
       
    })  
 
-/* FUNZIONE PER INSERIRE LO 0 ALL'INTERNO DELL'ORA SE I MINUTI O LE ORE SONO MINORI DI 10  */
-
-function addZero(i){
-   if(i<10){
-      i = "0" + i
-   }
-   return i;
-}
-
-//CREATA FUNZIONE ESTERNA PER INVIARE I MESSAGGI
-function send(){
-   /* salvo il valore dell'input inserito dall'utente */
-   var messaggio = $(".message").val();
-   
-   
-   /* salvo una variabile con l'elemento da clonare */
-   var elementmsg = $("#template .msgsent").clone();
-   /* var msgPC = $("#template .msgreceived").clone(); */
-   console.log(elementmsg);
-
-   //creo una variabile per inserire l'ora corrente
-   var date = new Date();
-   var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
-
-   /* cerco all'interno della mia variabile la classe testo e stampo all'interno il valore del messaggio inserito dall'utente */
-   elementmsg.find(".testo").text(messaggio);
-   elementmsg.find(".time").text(time);
-
-   /* stampo un messaggio automatico di risposta ad ogni mex inviato dall'utente */
-   
-   
-   
-   //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
-   if (messaggio.length >= 1){
-      $(".my_chat.my_active").prepend(elementmsg);
-      //funzione esterna che mi richiama il testo pc più adatto
-      rispostaPc(messaggio)
-      
-      //Ripulisco l'input ad ogni invio
-      $(".message").val("");
-      
-   }
-   
-}
 
 //FUNZIONE PER FILTRARE NOMI CONTATTI CON LA SEARCHBAR . (Problema con keydown , funziona bene con keyup , con keypress funziona per la ricerca ma crea un bug quando cancelli il nome inserito)
    $(".search-input").keyup(function(){
-      
       
       //salvo una variabile che include il valore da me inserito
       var txtInserito = $(".search-input").val().toLowerCase();
@@ -151,10 +106,6 @@ function send(){
       $("#img_top").attr("src",imgTop);
    })
 
-   
-   
-   /* document.getElementById("#nome_top").innerHTML = nomeTop; */
-
    //FUNZIONE PER FAR APPARIRE E SCOMPARIRE IL DROPDOWN
 
    //parto da un elemento statico , in questo caso l intera finestra della chat attiva in quel momento e poi mi sposto su .global-mex-user (elemento generato dinamicamente)
@@ -170,43 +121,7 @@ function send(){
       
    });
 
-  function rispostaPc(messaggio){
-     /* salvo il valore dell'input inserito dall'utente */
-     var messaggio = $(".message").val();
-     
-     /* salvo una variabile con l'elemento da clonare */
-     var msgPC = $("#template .msgreceived").clone();
-
-     //creo una variabile per inserire l'ora corrente
-     var date = new Date();
-     var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
-     var answerPc = msgPC.find(".testopc");
-     
-     // mi salvo 2 array con i valori delle risposte chiave 
-     var keywordUser = ["ciao", "come va", "bene", "male", "usciamo"];
-     var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani"];
-     //risposta di base del pc quando viene scritta una keywords non definita
-     answerPc.text("mi dispiace , non capisco ancora questa parola");
-     msgPC.find(".time").text(time); 
-     // ciclo il mio array delle parole chiave inserite dall'utente ...
-     for (var x = 0; x < keywordUser.length; x++){
-        //...se una parola chiave è stata trovata , allora il pc risponde in maniera adeguata , in base all'index
-        if (messaggio.includes(keywordUser[x])) {
-           answerPc.text(rispostePc[x]);
-         }  
-     }
-     $(".my_list-bg span:last-child").text("sta scrivendo...").addClass("writing")
-     //imposto il tempo di risposta
-     setTimeout(function () {
-        $(".my_chat.my_active").prepend(msgPC)
-        $(".my_list-bg span:last-child").text("Anteprima messaggio").removeClass("writing")
-     }, 1500);
-
-     
-  } 
-
-
-  //FUNZIONE MODALITà NOTTE
+   //FUNZIONE MODALITà NOTTE
    $(document).on("click", ".fa-moon", function (event) {
       //creo una variabile per comodità per far riferimento a quell elemento
       var elem = $(this);
@@ -214,7 +129,7 @@ function send(){
       var cssdark = "css/styledark.css" */
       //cerco all'interno di
       elem.toggleClass("moon_white")
-      if (elem.hasClass("moon_white")){
+      if (elem.hasClass("moon_white")) {
          /* $("#my_personal-css").attr("href",cssdark); */
          $("body").addClass("body_dark");
          $(".my_col-bg").addClass("my_col-bg-dark");
@@ -228,9 +143,9 @@ function send(){
          $(".global-mex-pc").addClass("global-mex-pc-dark");
          $("input.message").addClass("search-dark-det")
          $("path").attr('fill', '#fff');
-         $("#state path:last-child").attr('fill', '#009588'); 
+         $("#state path:last-child").attr('fill', '#009588');
 
-      }else{
+      } else {
          /* $("#my_personal-css").attr("href", cssbasic); */
          $("body").removeClass("body_dark");
          $(".my_col-bg").removeClass("my_col-bg-dark");
@@ -245,10 +160,107 @@ function send(){
          $("input.message").removeClass("search-dark-det")
          $("path").attr('fill', '#263238');
          $("#state path:first-child").attr('fill', '#727A7E');
-         $("#state path:last-child").attr('fill', '#009588'); 
-         
+         $("#state path:last-child").attr('fill', '#009588');
+
       }
 
    });
+
+
+
+   /* ********BLOCCO FUNZIONI ESTERNE*************** */
+
+   //FUNZIONE ESTERNA PER INVIARE I MESSAGGI
+   function send() {
+
+      var date = new Date();
+      var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
+      /* salvo il valore dell'input inserito dall'utente */
+      var messaggio = $(".message").val();
+
+
+      /* salvo una variabile con l'elemento da clonare */
+      var elementmsg = $("#template .msgsent").clone();
+      /* var msgPC = $("#template .msgreceived").clone(); */
+      console.log(elementmsg);
+
+
+      /* cerco all'interno della mia variabile la classe testo e stampo all'interno il valore del messaggio inserito dall'utente */
+      elementmsg.find(".testo").text(messaggio);
+      elementmsg.find(".time").text(time);
+      
+      //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
+      if (messaggio.length >= 1) {
+         $(".my_chat.my_active").prepend(elementmsg);
+         //richiamo la mia funzione esterna rispostaPC
+         rispostaPc();
+
+         //Ripulisco l'input ad ogni invio
+         $(".message").val("");
+
+      }
+
+   }
+
+   //FUNZIONE ESTERNA PER LA RISPOSTA AUTOMATICA DEL PC
+  function rispostaPc(){
+
+     var date = new Date();
+     var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
+     /* salvo il valore dell'input inserito dall'utente */
+     var messaggio = $(".message").val();
+     
+     /* salvo una variabile con l'elemento da clonare */
+     var msgPC = $("#template .msgreceived").clone();
+      /* salvo una variabile che indica dove inserire il testo */
+     var answerPc = msgPC.find(".testopc");
+  /* salvo una variabile che indica il valore del nome utente con il quale si chatta */
+     var nomeTop = $(".my_list-bg span:first-child").text();
+     
+     // mi salvo 2 array con i valori delle risposte chiave 
+     var keywordUser = ["ciao", "come va", "bene", "male", "usciamo","chi sei","sei un bot"];
+     var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani","sono " + nomeTop + " non vedi ?","bene , hai scoperto il mio segreto , non posso che autodistruggermi"];
+     
+     /* setTimeout(function (){
+        if (messaggio.includes("sei un bot")) {
+           $(".page-notFound").show()
+         }
+      },5000); */
+      /* window.location.replace("http://stackoverflow.com"); */
+     //risposta di base del pc quando viene scritta una keywords non definita
+     answerPc.text("mi dispiace , non capisco ancora questa parola");
+     msgPC.find(".time").text(time); 
+     // ciclo il mio array delle parole chiave inserite dall'utente ...
+     for (var x = 0; x < keywordUser.length; x++){
+        //...se una parola chiave è stata trovata , allora il pc risponde in maniera adeguata , in base all'index
+        if (messaggio.includes(keywordUser[x])) {
+           answerPc.text(rispostePc[x]);
+           
+         }  
+        
+         
+     }
+     
+
+     //cambio il valore del testo nella mia lista contatti in "sta scrivendo" , che sarà visibile prima dell'arrivo della risposta del pc 
+     $(".my_list-bg span:last-child").text("sta scrivendo...").addClass("writing")
+     //imposto il tempo di risposta
+     setTimeout(function () {
+        $(".my_chat.my_active").prepend(msgPC)
+        $(".my_list-bg span:last-child").text(answerPc.text()).removeClass("writing")
+     }, 1500);
+   } 
+
+   /* FUNZIONE PER INSERIRE LO 0 ALL'INTERNO DELL'ORA SE I MINUTI O LE ORE SONO MINORI DI 10  */
+
+   function addZero(i) {
+      if (i < 10) {
+         i = "0" + i
+      }
+      return i;
+   }
+
+
+  
       
 })/* Chiusura getready function */
