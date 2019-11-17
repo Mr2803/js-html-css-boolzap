@@ -12,7 +12,8 @@ body{
 }
 .body_dark{
    background: linear-gradient( #222424 0%, #222424 15%, rgb(56, 58, 55) 15%, rgb(56, 58, 55) 100%);
-    
+   background-repeat: no-repeat;
+   background-attachment: fixed; 
 }
 .noPadding-margin{
    padding:0 !important;
@@ -26,7 +27,7 @@ body{
    background-color:#EEEEEE
 }
 .my_col-bg-dark{
-   background-color:rgb(36, 33, 33);
+   background-color:#323232;
 }
 .my_col-bg span:last-child{
    color:rgb(163, 161, 161);
@@ -38,11 +39,11 @@ body{
    width:40px;
 }
 
-.icons img{
+.icons svg{
  width: 100%;
  margin-right: 10px;
 }
-.icons img:last-child{
+.icons svg:last-child{
  
  margin-right: 0;
 }
@@ -75,7 +76,7 @@ body{
    background:lightgrey;
 }
 .my_list-bg-dark{
-   background:rgb(53, 48, 48);
+   background:#323232;
 }
 
 .search{
@@ -85,7 +86,7 @@ body{
     align-items: center;
 }
 .search-dark{
-   background:rgb(85, 81, 81);
+   background:#2B2929;
     
 }
 
@@ -109,6 +110,7 @@ body{
 
 .search-dark-det{
    background: #202020 !important;
+   color:white;
 }
  /* Fine Sezione Contatti */
 
@@ -120,18 +122,19 @@ body{
    border-radius: 100%;
  }
 
- .options img,
+ .options svg,
  .options i{
     margin-right: 20px;
     width:100%;
  }
 
- .option svg{
-    width: 40px;
- }
+
 
  .name_access span:last-child{
     font-size: 12px;
+ }
+ .name_access-dark{
+    color:white;
  }
 
 /* Sezione Chat */
@@ -165,7 +168,7 @@ body{
    background-color:#EEEEEE
 }
 .invio-dark{
-   background-color:rgb(36, 33, 33);
+   background-color:#323232;
 }
 
 .invio input{
@@ -174,6 +177,7 @@ body{
    border:0;
    padding:5px;
 }
+
 
 .invio input::placeholder{
   padding:5px;
