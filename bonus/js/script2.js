@@ -221,11 +221,11 @@ $(document).ready(function () {
      var keywordUser = ["ciao", "come va", "bene", "male", "usciamo","chi sei","sei un bot"];
      var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani","sono " + nomeTop + " non vedi ?","bene , hai scoperto il mio segreto , non posso che autodistruggermi"];
      
-     /* setTimeout(function (){
+     setTimeout(function (){
         if (messaggio.includes("sei un bot")) {
            $(".page-notFound").show()
          }
-      },5000); */
+      },5000); 
       /* window.location.replace("http://stackoverflow.com"); */
      //risposta di base del pc quando viene scritta una keywords non definita
      answerPc.text("mi dispiace , non capisco ancora questa parola");

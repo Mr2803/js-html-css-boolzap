@@ -65,6 +65,7 @@ body{
 .my_list-global{
    height:calc(75vh - 50px);
    overflow-y: scroll;
+   overflow-x: hidden;
 }
 
 .my_list-item{
@@ -140,7 +141,10 @@ body{
     width:100%;
  }
 
-
+.name_access{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
  .name_access span:last-child{
     font-size: 12px;
