@@ -37,6 +37,7 @@ $(document).ready(function () {
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
    $("#send").click(send)
 
+   
 //FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE o = AD 1
    $(".message").keyup(function (j) {
       console.log(j.keyCode)
@@ -164,7 +165,9 @@ function send(){
       elem.find(".drop-mex").toggleClass("my_active");
       elem.find(".drop-mex span").click(function(){
       elem.parents(".msgsent").addClass("displayNone");
+        
       })
+      
    });
 
   function rispostaPc(messaggio){
@@ -178,7 +181,7 @@ function send(){
      var date = new Date();
      var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
      var answerPc = msgPC.find(".testopc");
-     var anteprimaMex = $(".testopc").text()
+     
      // mi salvo 2 array con i valori delle risposte chiave 
      var keywordUser = ["ciao", "come va", "bene", "male", "usciamo"];
      var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani"];
@@ -192,14 +195,32 @@ function send(){
            answerPc.text(rispostePc[x]);
          }  
      }
-     $(".my_list-bg span:last-child").text("sta scrivendo").css("color","#06d755").css("font-weigth","bold")
+     $(".my_list-bg span:last-child").text("sta scrivendo...").addClass("writing")
      //imposto il tempo di risposta
      setTimeout(function () {
         $(".my_chat.my_active").prepend(msgPC)
-        $(".my_list-bg span:last-child").text("anteprima messaggio")
-     }, 2000);
+        $(".my_list-bg span:last-child").text("Anteprima messaggio").removeClass("writing")
+     }, 1500);
+
      
   } 
 
+
+  //FUNZIONE MODALITà NOTTE
+   $(document).on("click", ".fa-moon", function (event) {
+      //creo una variabile per comodità per far riferimento a quell elemento
+      var elem = $(this);
+      //cerco all'interno di
+      elem.toggleClass("moon_white")
+      if (elem.hasClass("moon_white")){
+         $(".my_col-bg").css("background-color","black")
+         $(".my_bg-chat").addClass("my_bg-chat-dark")
+      }else{
+         $(".my_col-bg").css("background-color", "#eeeeee")
+         $(".my_bg-chat").removeClass("my_bg-chat-dark")
+      }
+      
+
+   });
       
 })/* Chiusura getready function */

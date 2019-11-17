@@ -116,6 +116,11 @@ body{
    background-size:50% ;
  
 }
+.my_bg-chat-dark{
+   background:url(../img/sfondochat.png), rgb(53, 48, 48);
+   background-size:50% ;
+ 
+}
 
 .my_chat{
    height:calc(75vh - 50px);
@@ -203,8 +208,18 @@ background-color:white;
    word-break: break-word;
 }
 
+.writing{
+   color:#06d755 !important;
+   font-weight: bold;
+}
+
 #send{
    display:none;
+}
+
+/* MODALITà NOTTE */
+.moon_white{
+   color:white;
 }
 
 
