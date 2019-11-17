@@ -62,10 +62,18 @@ body{
    background:white;
    border-bottom:1px solid rgba(180, 180, 180, 0.568)
 }
+
+.my_list-item-dark{
+   background:#323232;
+}
+
 .my_list-item:hover{
    background:rgba(255, 252, 252, 0.642);
 }
 
+.my_list-item-dark:hover{
+   background:rgb(83, 81, 81);
+}
 
 .my_list-item span:last-child{
   color: rgb(163, 161, 161);
@@ -75,12 +83,14 @@ body{
    border-bottom:0
 }
 
-.my_list-bg{
+.my_list-bg {
    background:lightgrey;
 }
-.my_list-bg-dark{
-   background:#323232;
+
+.my_list-bg:hover{
+   background:lightgrey;
 }
+
 
 .search{
    height: 50px;

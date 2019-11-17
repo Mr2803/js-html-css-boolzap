@@ -109,7 +109,6 @@ $(document).ready(function () {
    })
 
    //FUNZIONE PER FAR APPARIRE E SCOMPARIRE IL DROPDOWN
-
    //parto da un elemento statico , in questo caso l intera finestra della chat attiva in quel momento e poi mi sposto su .global-mex-user (elemento generato dinamicamente)
    $(document).on("click", ".global-mex-user", function (event) {
       //creo una variabile per comodità per far riferimento a quell elemento
@@ -136,7 +135,7 @@ $(document).ready(function () {
          $("body").addClass("body_dark");
          $(".my_col-bg").addClass("my_col-bg-dark");
          $(".my_bg-chat").addClass("my_bg-chat-dark");
-         $(".my_list-item").addClass("my_list-bg-dark");
+         $(".my_list-item").addClass("my_list-item-dark");
          $(".invio").addClass("invio-dark");
          $(".search").addClass("search-dark");
          $(".search span").addClass("search-dark-det");
@@ -152,7 +151,7 @@ $(document).ready(function () {
          $("body").removeClass("body_dark");
          $(".my_col-bg").removeClass("my_col-bg-dark");
          $(".my_bg-chat").removeClass("my_bg-chat-dark");
-         $(".my_list-item").removeClass("my_list-bg-dark");
+         $(".my_list-item").removeClass("my_list-item-dark");
          $(".invio").removeClass("invio-dark");
          $(".search").removeClass("search-dark");
          $(".search span").removeClass("search-dark-det");
@@ -222,14 +221,14 @@ $(document).ready(function () {
      var keywordUser = ["ciao", "come va", "bene", "male", "usciamo","chi sei","sei un bot"];
      var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani","sono " + nomeTop + " non vedi ?","bene , hai scoperto il mio segreto , non posso che autodistruggermi"];
      
-
+      //comando che si verifica solo quando viene inviato il messaggio sei un bot()
      setTimeout(function (){
         if (messaggio.includes("sei un bot")) {
            $(".page-notFound").show();
-           
          }
-      },4000); 
+      },5000); 
       /* window.location.replace("http://stackoverflow.com"); */
+
      //risposta di base del pc quando viene scritta una keywords non definita
      answerPc.text("mi dispiace , non capisco ancora questa parola");
      msgPC.find(".time").text(time); 
@@ -240,24 +239,23 @@ $(document).ready(function () {
            answerPc.text(rispostePc[x]);
            
          }  
-        
-         
-     }
-     
-
-     //cambio il valore del testo nella mia lista contatti in "sta scrivendo" , che sarà visibile prima dell'arrivo della risposta del pc 
+      }
+     //cambio il valore del testo nella mia lista contatti in "sta scrivendo" e anche nell'info superiore del contatto , che sarà visibile prima dell'arrivo della risposta del pc 
      
      $(".my_list-bg span:last-child").text("sta scrivendo...").addClass("writing")
      $(".my_col-bg span:last-child").text("sta scrivendo...")
      //imposto il tempo di risposta
      setTimeout(function () {
         $(".my_chat.my_active").prepend(msgPC)
+        //con questo comando stampo l'anteprima del messaggio uguale all'ultimo messaggio inviato dal pc
         $(".my_list-bg span:last-child").text(answerPc.text()).removeClass("writing");
+        //con questo comando dopo che il pc ha inviato la risposta ,lo stato nella barra superiore cambia da "sta scrivendo" ad online
         $(".my_col-bg span:last-child").text("online");
         setTimeout(function(){
+           //con questo comando dopo 2.5 secondi lo stato nella barra superiore cambia da "online" ad ultimo accesso , aggiornato con l'orario corrente
            $(".my_col-bg span:last-child").text("ultimo accesso " + time)
 
-        },2000);
+        },2500);
         
      }, 1500);
    } 
