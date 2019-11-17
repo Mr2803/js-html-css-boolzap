@@ -25,7 +25,9 @@ body{
 .my_col-bg{
    background-color:#EEEEEE
 }
-
+.my_col-bg-dark{
+   background-color:rgb(36, 33, 33);
+}
 .my_col-bg span:last-child{
    color:rgb(163, 161, 161);
 }
@@ -72,6 +74,9 @@ body{
 .my_list-bg{
    background:lightgrey;
 }
+.my_list-bg-dark{
+   background:rgb(53, 48, 48);
+}
 
 .search{
    height: 50px;
@@ -79,7 +84,10 @@ body{
     display: flex;
     align-items: center;
 }
-
+.search-dark{
+   background:rgb(85, 81, 81);
+    
+}
 
 .search span {
     width: 20%;
@@ -99,7 +107,9 @@ body{
     font-size: 12px;
 }
 
-
+.search-dark-det{
+   background: #202020 !important;
+}
  /* Fine Sezione Contatti */
 
  /* Sezione info contatto */
@@ -130,7 +140,11 @@ body{
    background-size:50% ;
  
 }
-
+.my_bg-chat-dark{
+   background:url(../img/sfondochat.png), rgb(53, 48, 48);
+   background-size:50% ;
+ 
+}
 
 .my_chat{
    height:calc(75vh - 50px);
@@ -150,7 +164,9 @@ body{
    height:50px;
    background-color:#EEEEEE
 }
-
+.invio-dark{
+   background-color:rgb(36, 33, 33);
+}
 
 .invio input{
    width: 85%;
@@ -208,7 +224,10 @@ background-color:#DCF8C6;
 .global-mex-pc{
 background-color:white;
 }
-
+.global-mex-pc-dark{
+background-color:#2d2d2d!important;
+color:white;
+}
 
 .time{
    color:rgba(189, 179, 179, 0.9);

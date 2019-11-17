@@ -37,7 +37,6 @@ $(document).ready(function () {
 //SELEZIONO LA MIA FRECCIA E INVIO TRAMITE LA MIA FUNZIONE ESTERNA   
    $("#send").click(send)
 
-   
 //FUNZIONE PER INVIARE ANCHE CON IL TASTO ENTER CON LA CONDIZIONE CHE LA LUNGHEZZA MINIMA DEI CARATTERI DEVE ESSERE MAGGIORE o = AD 1
    $(".message").keyup(function (j) {
       console.log(j.keyCode)
@@ -74,7 +73,7 @@ function send(){
    
    /* salvo una variabile con l'elemento da clonare */
    var elementmsg = $("#template .msgsent").clone();
-   /* var msgPC = $("#template .msgreceived").clone(); */
+   var msgPC = $("#template .msgreceived").clone();
    console.log(elementmsg);
 
    //creo una variabile per inserire l'ora corrente
@@ -87,13 +86,69 @@ function send(){
 
    /* stampo un messaggio automatico di risposta ad ogni mex inviato dall'utente */
    
-   
+   var answerPc = msgPC.find(".testopc");
    
    //Pongo la condizione dove se la lunghezza della stringa inserita dall'utente è minore di 1 allora non viene inviato nulla
    if (messaggio.length >= 1){
       $(".my_chat.my_active").prepend(elementmsg);
-      //funzione esterna che mi richiama il testo pc più adatto
-      rispostaPc(messaggio)
+
+      answerPc.text("risposta automatica");
+      msgPC.find(".time").text(time);
+
+      setTimeout(function () { 
+         $(".my_chat.my_active").prepend(msgPC) 
+      }, 1000);
+
+      if (messaggio.includes("ciao")) {
+
+         answerPc.text("ciao");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+            }, 1000)
+      } else if (messaggio.includes("come va")) {
+
+         answerPc.text("bene ,grazie a te?");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+            }, 1000);
+      } else if (messaggio.includes("bene")) {
+
+         answerPc.text("ah, menomale mi fa piacere 😃");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+         }, 1000);
+      } else if (messaggio.includes("male")) {
+
+         answerPc.text("ah , mi dispiace molto 😢");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+         }, 1000);
+      } else if (messaggio.includes("usciamo") || messaggio.includes("caffè") ) {
+
+         answerPc.text("oggi sono impegnato,magari domani");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC); 
+            }, 1000)
+      } else if (messaggio.includes("allegria")) {
+
+         answerPc.html("<img src='img/allegria.jpg' alt='' style='width: 250px'>");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+         }, 1000)
+      } else if (messaggio.includes("no simo") || messaggio.includes("caffè")) {
+
+         answerPc.text("😠😠😠");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+         }, 1000)
+     
+      } else if (messaggio.includes("scherzando") || messaggio.includes("caffè")) {
+
+         answerPc.text("👼👼👼");
+         setTimeout(function () {
+            $(".my_chat.my_active").prepend(msgPC);
+         }, 1000)
+      }
       
       //Ripulisco l'input ad ogni invio
       $(".message").val("");
@@ -165,46 +220,23 @@ function send(){
       elem.find(".drop-mex").toggleClass("my_active");
       elem.find(".drop-mex span").click(function(){
       elem.parents(".msgsent").addClass("displayNone");
-        
       })
-      
    });
 
-  function rispostaPc(messaggio){
-     /* salvo il valore dell'input inserito dall'utente */
-     var messaggio = $(".message").val();
-     
-     /* salvo una variabile con l'elemento da clonare */
-     var msgPC = $("#template .msgreceived").clone();
-
-     //creo una variabile per inserire l'ora corrente
-     var date = new Date();
-     var time = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
-     var answerPc = msgPC.find(".testopc");
-     
-     // mi salvo 2 array con i valori delle risposte chiave 
+  /* function rispostaPc(mex,x){
      var keywordUser = ["ciao", "come va", "bene", "male", "usciamo"];
-     var rispostePc = ["ciao", "bene grazie, a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani"];
-     //risposta di base del pc quando viene scritta una keywords non definita
-     answerPc.text("mi dispiace , non capisco ancora questa parola");
-     msgPC.find(".time").text(time); 
-     // ciclo il mio array delle parole chiave inserite dall'utente ...
-     for (var x = 0; x < keywordUser.length; x++){
-        //...se una parola chiave è stata trovata , allora il pc risponde in maniera adeguata , in base all'index
-        if (messaggio.includes(keywordUser[x])) {
-           answerPc.text(rispostePc[x]);
-         }  
-     }
-     $(".my_list-bg span:last-child").text("sta scrivendo...").addClass("writing")
-     //imposto il tempo di risposta
+     var answersPc = ["ciao", "bene, grazie a te?", "ah, menomale mi fa piacere 😃", "ah , mi dispiace molto 😢", "oggi sono impegnato,magari domani"];
+     answerPc.text("risposta automatica");
+     msgPC.find(".time").text(time);
      setTimeout(function () {
         $(".my_chat.my_active").prepend(msgPC)
-        $(".my_list-bg span:last-child").text("Anteprima messaggio").removeClass("writing")
-     }, 1500);
-
-     
-  } 
-
+     }, 1000);
+     if (messaggio.includes(keywordUser[x])){
+        return setTimeout(function () {
+           $(".my_chat.my_active").prepend(answersPc[x])
+        }, 1000);
+     }
+  }  */
 
       
 })/* Chiusura getready function */

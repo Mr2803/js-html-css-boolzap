@@ -206,5 +206,37 @@ function send(){
   } 
 
 
+  //FUNZIONE MODALITà NOTTE
+   $(document).on("click", ".fa-moon", function (event) {
+      //creo una variabile per comodità per far riferimento a quell elemento
+      var elem = $(this);
+      //cerco all'interno di
+      elem.toggleClass("moon_white")
+      if (elem.hasClass("moon_white")){
+         $(".my_col-bg").addClass("my_col-bg-dark");
+         $(".my_bg-chat").addClass("my_bg-chat-dark");
+         $(".my_list-item").addClass("my_list-bg-dark");
+         $(".invio").addClass("invio-dark");
+         $(".search span").addClass("search-dark-det");
+         $(".search input").addClass("search-dark-det");
+         $("body").addClass("body_dark");
+         $(".global-mex-pc").addClass("global-mex-pc-dark");
+         $("path").attr('fill', '#fff');
+
+      }else{
+         $(".my_col-bg").removeClass("my_col-bg-dark");
+         $(".my_bg-chat").removeClass("my_bg-chat-dark");
+         $(".my_list-item").removeClass("my_list-bg-dark");
+         $(".invio").removeClass("invio-dark");
+         $(".search span").removeClass("search-dark-det");
+         $(".search input").removeClass("search-dark-det");
+         $("body").removeClass("body_dark");
+         $(".global-mex-pc").removeClass("global-mex-pc-dark");
+         $("path").attr('fill', '#263238');
+      }
+      
+      /* #2d2d2d!important */
+
+   });
       
 })/* Chiusura getready function */
